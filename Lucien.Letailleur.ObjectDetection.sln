@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucien.Letailleur.ObjectDetection", "Lucien.Letailleur.ObjectDetection\Lucien.Letailleur.ObjectDetection.csproj", "{646C88F6-2F2B-4ED4-88EA-E98F6AECB779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucien.Letailleur.ObjectDetection.Tests", "Lucien.Letailleur.ObjectDetection.Tests\Lucien.Letailleur.ObjectDetection.Tests.csproj", "{36033A2D-CA28-4A69-8506-774E408F1653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucien.Letailleur.ObjectDetection.Console", "Lucien.Letailleur.ObjectDetection.Console\Lucien.Letailleur.ObjectDetection.Console.csproj", "{A34D0B3E-9BB8-41DB-BF4E-14BCD20016B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lucien.Letailleur.ObjectDetection.WebApi", "Lucien.Letailleur.ObjectDetection.WebApi\Lucien.Letailleur.ObjectDetection.WebApi.csproj", "{1820E57B-4757-427D-A3C7-1D1FD4499AEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{646C88F6-2F2B-4ED4-88EA-E98F6AECB779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646C88F6-2F2B-4ED4-88EA-E98F6AECB779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646C88F6-2F2B-4ED4-88EA-E98F6AECB779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646C88F6-2F2B-4ED4-88EA-E98F6AECB779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36033A2D-CA28-4A69-8506-774E408F1653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36033A2D-CA28-4A69-8506-774E408F1653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36033A2D-CA28-4A69-8506-774E408F1653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36033A2D-CA28-4A69-8506-774E408F1653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34D0B3E-9BB8-41DB-BF4E-14BCD20016B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34D0B3E-9BB8-41DB-BF4E-14BCD20016B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34D0B3E-9BB8-41DB-BF4E-14BCD20016B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34D0B3E-9BB8-41DB-BF4E-14BCD20016B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1820E57B-4757-427D-A3C7-1D1FD4499AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1820E57B-4757-427D-A3C7-1D1FD4499AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1820E57B-4757-427D-A3C7-1D1FD4499AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1820E57B-4757-427D-A3C7-1D1FD4499AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
