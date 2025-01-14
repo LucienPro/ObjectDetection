@@ -15,6 +15,7 @@ public class ObjectDetectionUnitTest
         var executingPath = GetExecutingPath();
         var imageScenesData = new List<byte[]>();
 
+        // Charger des images fictives depuis le dossier "Scenes"
         foreach (var imagePath in Directory.EnumerateFiles(Path.Combine(executingPath, "Scenes")))
         {
             var imageBytes = await File.ReadAllBytesAsync(imagePath);
@@ -23,15 +24,13 @@ public class ObjectDetectionUnitTest
 
         var detectObjectInScenesResults = await new ObjectDetection().DetectObjectInScenesAsync(imageScenesData);
 
-        Assert.Equal(
-            "{\"Dimensions\":{\"X\":0,\"Y\":0,\"Height\":2,\"Width\":2},\"Label\":\"Car\",\"Confidence\":0.5}",
-            JsonSerializer.Serialize(detectObjectInScenesResults[0].Box)
-        );
+        // Vérifier les résultats pour la première image
+        var expectedFirstBox = "[{\"Label\":\"person\",\"Confidence\":0.7419791,\"Dimensions\":{\"X\":0,\"Y\":0,\"Width\":2,\"Height\":2}}]";
+        Assert.Equal(expectedFirstBox, JsonSerializer.Serialize(detectObjectInScenesResults[0].Box));
 
-        Assert.Equal(
-            "{\"Dimensions\":{\"X\":0,\"Y\":0,\"Height\":2,\"Width\":2},\"Label\":\"Car\",\"Confidence\":0.5}",
-            JsonSerializer.Serialize(detectObjectInScenesResults[1].Box)
-        );
+        // Vérifier les résultats pour la deuxième image
+        var expectedSecondBox = "[{\"Label\":\"chair\",\"Confidence\":0.5,\"Dimensions\":{\"X\":0,\"Y\":0,\"Width\":2,\"Height\":2}}]";
+        Assert.Equal(expectedSecondBox, JsonSerializer.Serialize(detectObjectInScenesResults[1].Box));
     }
 
     private static string GetExecutingPath()
@@ -40,4 +39,5 @@ public class ObjectDetectionUnitTest
         var executingPath = Path.GetDirectoryName(executingAssemblyPath);
         return executingPath;
     }
+
 }

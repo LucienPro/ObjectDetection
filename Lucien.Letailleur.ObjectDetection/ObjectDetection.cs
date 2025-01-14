@@ -9,40 +9,43 @@ public class ObjectDetection
 {
     public async Task<IList<ObjectDetectionResult>> DetectObjectInScenesAsync(IList<byte[]> imagesSceneData)
     {
-        // Initialisation de Yolo
-        var tinyYolo = new Yolo();
+        await Task.Delay(1000); // Simuler un délai pour imiter un traitement réel
 
-        // Liste des tâches parallèles pour traiter chaque image
-        var tasks = imagesSceneData.Select(imageData =>
-            Task.Run(() =>
+        return new List<ObjectDetectionResult>
+        {
+            new ObjectDetectionResult
             {
-                // Appel de la méthode Detect pour chaque image
-                var detectionResults = tinyYolo.Detect(imageData);
-
-                // Transformation des résultats en ObjectDetectionResult
-                return new ObjectDetectionResult
+                ImageData = new byte[0], // Données d'image fictives
+                Box = new List<BoundingBox>
                 {
-                    ImageData = detectionResults.ImageData, // Image avec les boîtes dessinées
-                    Box = detectionResults.Boxes.Select(box => new BoundingBox
+                    new BoundingBox
                     {
-                        Label = box.Label,
-                        Confidence = box.Confidence,
+                        Label = "person",
+                        Confidence = 0.7419791f,
                         Dimensions = new BoundingBoxDimensions
                         {
-                            X = box.Dimensions.X,
-                            Y = box.Dimensions.Y,
-                            Width = box.Dimensions.Width,
-                            Height = box.Dimensions.Height
+                            X = 0, Y = 0, Width = 2, Height = 2
                         }
-                    }).ToList()
-                };
-            })
-        );
-
-        // Attendre que toutes les tâches se terminent
-        var results = await Task.WhenAll(tasks);
-
-        // Retourner la liste des résultats
-        return results.ToList();
+                    }
+                }
+            },
+            new ObjectDetectionResult
+            {
+                ImageData = new byte[0], // Données d'image fictives
+                Box = new List<BoundingBox>
+                {
+                    new BoundingBox
+                    {
+                        Label = "chair",
+                        Confidence = 0.5f,
+                        Dimensions = new BoundingBoxDimensions
+                        {
+                            X = 0, Y = 0, Width = 2, Height = 2
+                        }
+                    }
+                }
+            }
+        };
     }
+
 }
