@@ -1,1 +1,1 @@
-https://github.com/LucienPro/ObjectDetection.git
+https://github.com/LucienPro/ObjectDetection
